@@ -1,0 +1,133 @@
+<?php
+
+/**
+ * @file
+ * Contains custom code for the Premiership module.
+ */
+  function premiership_theme($existing, $type, $theme, $path) {
+    
+  return [
+       'premiership_teams_block' => [
+          'variables' => ['teams' => NULL],
+          'theme' => 'premiership-teams-block',
+      ],
+
+      'team_page' => [
+        'variables' => ['details' => NULL],
+        'theme' => 'team-page',
+      ],
+    
+      'team_details_page' => [
+        'variables' => ['team_details' => NULL ],
+        'theme' => 'team-details-page', 
+      ],
+    
+      
+      'premiership_events_block' => [
+        'variables' => ['events' => NULL ], 
+        'theme' => 'premiership-events-block', 
+      ],
+
+    'premiership_players_block' => [
+      'variables' => ['players' => NULL ], 
+      'theme' => 'premiership-players-block', 
+     ],
+
+    'event_details_page' => [
+      'variables' => [
+      'event_details' => NULL , 
+      'odds' =>  NULL , 
+      'venues' => NULL, 
+      'weatherreport' => NULL,
+      ],
+      'theme' => 'event-details-page',
+    ],
+
+    'standings_page' => [
+      'variables' => ['standings' => NULL,
+      'gg' => NULL,
+     ],
+      'theme' => 'standings-page', 
+    ],
+
+    'transfers_page' => [
+      'variables' => ['transfers' => NULL,
+      
+     ],
+      'theme' => 'transfers-page', 
+    ],
+    
+  ];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ *  Implements hook_menu().
+ */
+function premiership_menu () {
+  $items = [];
+
+  $items['my-form'] = [
+    'title'=> ' My Form',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['\Drupal\premiership\Form\PremiershipForm'],
+    'access callback' => 'user_access',
+    'access arguments' => ['access content'],
+  ];
+
+  return $items;
+}
+
+
+
+
+
+
+
+
+
+
+function premiership_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Check if this is the form where you want to store authentication token
+  if ($form_id == 'your_form_id') {
+    // Get the authentication token from wherever you have it.
+    $authentication_token = 'gtkVqK0WxpbobELAS1r3Fl5Wv8Ml5YB6thbs11qQ7jrVulQ0IiMCZtmkP9po';
+
+    // Store the authentication token in the state system.
+    \Drupal::state()->set('premiership_authentication_token', $suthentication_token);
+
+
+
+
+
+
+  //  Retrieve the Token When Needed:
+//You can retrieve the stored authentication token in other parts of your module or anywhere else in your Drupal code using the following code:
+
+
+// Retrieve the authentication token from the state system.
+$authentication_token = \Drupal::state()->get('premiership_authentication_token');
+//Again, replace 'premiership_authentication_token' with the key you used to store the token.
+
+//Don't Forget to Clear the Token When No Longer Needed:
+//It's important to remove the token from the state system when it's no longer needed or when it expires. You can do this by calling delete on the State API with the appropriate key:
+
+
+// Delete the authentication token from the state system.
+\Drupal::state()->delete('premiership_authentication_token');
+//This ensures that your Drupal site doesn't hold on to unnecessary data.
+
+//Remember to replace 'premiership_authentication_token' with a unique and meaningful key that identifies your specific authentication token within the State API.
+  }
+}
+

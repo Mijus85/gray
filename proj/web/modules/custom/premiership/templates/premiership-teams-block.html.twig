@@ -1,0 +1,15 @@
+ 
+     {{"TEAMS"}}
+{# In this code, we wrap the team name in a link that uses the team_id as a parameter in the URL. 
+  We use the path() function to generate the URL:path('premiership.team_details', {'team_id': team.id}) 
+  generates the URL for the team details page with the team_id as a parameter. #}
+
+<ol>
+    {% for team in teams["data"] %}
+        <li>
+        <p><a href="{{ path('premiership.team_details_page', {'team_id': team.id}) }}">{{ team.name }}</a></p>          
+        <img src="{{ team.image_path }}" alt="{{ team.name }}" />
+        </li>
+    {% endfor %}
+</ol>
+  

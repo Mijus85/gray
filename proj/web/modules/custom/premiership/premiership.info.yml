@@ -1,0 +1,6 @@
+name: Premiership Module
+type: module
+description: 'A module that lists the teams involved in league'
+core_version_requirement: ^9 || ^10
+dependencies:
+- drupal:block

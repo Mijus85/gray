@@ -1,0 +1,47 @@
+premiership.team_page:
+  path: '/team-page'
+  defaults:
+    _controller: '\Drupal\premiership\Controller\TeamDetailsController::teamPage'
+    _title: 'Team Page'
+  requirements:
+    _permission: 'access content'
+
+premiership.team_details_page:
+  path: '/team-details/{team_id}'
+  defaults:
+    _controller: '\Drupal\premiership\Controller\TeamDetailsController::teamDetailsPage'
+    _title: 'Team Details Page'
+  requirements:
+    _permission: 'access content'
+
+premiership.event_details_page:
+  path: '/event-details/{event_id}'
+  defaults:
+    _controller: '\Drupal\premiership\Controller\EventDetailsController::eventDetailsPage'
+    _title: 'Event Details'
+  requirements:
+    _permission: 'access content'
+
+premiership.standings_page:
+  path: '/standings-page/{season_id}'
+  defaults:
+    _controller: '\Drupal\premiership\Controller\StandingsController::standingsPage'
+    _title: 'Standings'
+  requirements:
+    _permission: 'access content'
+
+premiership.player_transfer_page:
+  path: '/player-transfer-page'
+  defaults:
+    _controller: '\Drupal\premiership\Controller\PlayerTransferController::transferPage'
+    _title: 'Player Transfer Page'
+  requirements:
+    _permission: 'access content'
+
+premiership.my_form:
+  path: '/my-form'
+  defaults:
+    _form: '\Drupal\premiership\Form\PremiershipForm'
+    _title: 'My Form Title'
+  requirements:
+    _permission: 'access content'

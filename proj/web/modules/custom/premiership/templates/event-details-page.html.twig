@@ -1,0 +1,27 @@
+<ol>
+   
+        <p>{{ event_details.data.name }}</p>
+        <p>DATE: {{ event_details.data.starting_at }}</p>
+        <p>RESULT: {{ event_details.data.result_info }}</p>
+
+
+  {% for odd in odds %}
+       <p>LABEL: {{ odd.label }}</p>
+       <p>MARKET DESCRIPTION: {{ odd.market_description }}</p>
+       <p>PROBABILITY: {{ odd.probability }}</p>
+  {% endfor %}
+
+ <p> VENUE NAME:  {{ event_details.data.venue.name }} </p>
+ <p>ADDRESS: {{ event_details.data.venue.address }}</p>
+
+
+  
+       <p>TEMPERATURE: {{ weatherreport.temperature.day }}</p>
+       <p>WIND: {{ weatherreport.wind.speed }}</p>
+      <p>HUMIDITY: {{ weatherreport.humidity }}</p>
+<img src="{{ weatherreport.icon }}" alt="{{ weatherreport.description }}" />
+
+
+ 
+</ol>
+

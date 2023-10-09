@@ -1,0 +1,22 @@
+
+  {{"EVENTS"}}
+  <ul>
+    {% for event in events["data"] %}
+        <li>
+          <p><a href="{{ path('premiership.event_details_page', {'event_id': event.id}) }}">{{ event.name }}</a></p>
+            <p>Venue ID: {{ event.venue_id }}</p>
+            <p>Starting At: {{ event.starting_at }}</p>
+        </li>
+    {% endfor %}
+</ul> 
+
+
+
+
+
+
+
+
+
+
+

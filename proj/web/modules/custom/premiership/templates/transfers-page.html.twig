@@ -1,0 +1,17 @@
+{{'PLAYER TRANSFERS'}}
+
+<ol>
+    {% for transfer in transfers %}
+
+    <p><img src= "{{ transfer.player.image_path}}"/></p>
+    <p> FIRST NAME: {{ transfer.player.firstname}}</p>
+    <p> LAST NAME: {{ transfer.player.lastname}}</p>
+    <p> DATE OF BIRTH: {{ transfer.player.date_of_birth}}</p>
+    <p> POSITION: {{transfer.position.name}}</p>
+    <p> AMOUNT: {{transfer.amount}}</p>
+    <p> DATE: {{transfer.date}}</p>
+    <p> FROM TEAM: <img src= "{{ transfer.fromteam.image_path}}"/> {{transfer.fromteam.name}}</p>
+    <p> TO TEAM: <img src= "{{ transfer.toteam.image_path}}"/> {{transfer.toteam.name}}</p>
+
+   {% endfor %}
+</ol>

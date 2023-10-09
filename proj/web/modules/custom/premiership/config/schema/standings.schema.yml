@@ -1,0 +1,9 @@
+config_schema:
+  standings.settings:
+    type: config_object
+    label: 'Standings Settings'
+    mapping:
+      season_id:
+        type: int
+        label: 'Season ID'
+        description: 'The selected season ID for standings.'

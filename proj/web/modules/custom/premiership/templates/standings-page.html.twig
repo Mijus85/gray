@@ -1,0 +1,39 @@
+{% if standings %}
+  <ul>
+    {% for standing in standings['data'] %}
+      <li>
+        <p>  {{standing.participant.name}} <p>
+        <p>  <img src="{{standing.participant.image_path}}"/></p>
+        <p> POSITION: {{ standing.position }} </p>
+        <p> RESULT: {{ standing.result }} </p>
+        <p> POINTS: {{ standing.points }} </p>
+        
+         {% for ggg in gg %}
+        <p> {{ ggg.type.name }}: {{ggg.value}} </p>
+          {% endfor %}
+       </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No standings data available.</p>
+{% endif %}
+  <ul>
+ {#  {% for ggg in gg %}
+    <p> {{ ggg.type.name }}: {{ggg.value}} </p>
+  {% endfor %} #}
+  </ul>
+
+ 
+
+
+
+
+
+
+   
+
+
+
+
+
+

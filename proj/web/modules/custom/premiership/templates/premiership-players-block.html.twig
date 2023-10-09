@@ -1,0 +1,13 @@
+{{ "FEATURED PLAYER" }}
+<ul>
+    {% for player in players["data"] %}
+
+    <p><img src= "{{ player.image_path}}"/></p>
+    <p> FIRST NAME: {{ player.firstname}}</p>
+    <p> LAST NAME: {{ player.lastname}}</p>
+    <p> HEIGHT:    {{ player.height}}</p>
+    <p> WEIGHT:    {{ player.weight}}</p>
+    <p> DATE OF BIRTH: {{ player.date_of_birth}}</p>
+
+   {% endfor %}
+</ul>

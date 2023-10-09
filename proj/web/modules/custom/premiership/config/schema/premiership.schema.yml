@@ -1,0 +1,7 @@
+premiership.settings:
+  type: config_object
+  label: 'Premiership settings'
+  mapping:
+    team_id:
+      type: integer
+      label: 'Selected team ID'

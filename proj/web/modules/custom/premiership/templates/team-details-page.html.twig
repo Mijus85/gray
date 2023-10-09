@@ -1,0 +1,20 @@
+{#
+  Template for rendering team details.
+  The team details are available as #team_details.
+#}
+
+
+{# Accessing the properties from the JSON array on Sportmonks.com #}
+<ol>
+         <p>ID: {{ team_details.id }}</p>
+        <p>Sport ID: {{ team_details.sport_id }}</p>
+        <p>Country ID: {{ team_details.country_id }}</p>
+        <p>Venue ID: {{ team_details.venue_id }}</p>
+        <p>Gender: {{ team_details.gender }}</p>
+        <p>Name: {{ team_details.name }}</p>
+        <p>Short Code: {{ team_details.short_code }}</p>
+        <p>Logo: <img src="{{ team_details.image_path }}" alt="{{ team_details.name }}" /></p>
+        <p>Founded: {{ team_details.founded }}</p>
+        <p>Type: {{ team_details.type }}</p>
+        <p>Last Played At: {{ team_details.last_played_at }}</p>
+ </ol>
